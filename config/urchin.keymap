@@ -127,22 +127,22 @@
 
         c_backspace_r {
             bindings = <&kp BACKSPACE>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
         };
 
         c_backspace_l {
             bindings = <&kp BACKSPACE>;
-            key-positions = <2 1>;
+            key-positions = <2 3>;
         };
 
         c_delete_r {
             bindings = <&kp DELETE>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
         };
 
         c_delete_l {
             bindings = <&kp DELETE>;
-            key-positions = <3 2>;
+            key-positions = <2 1>;
         };
 
         c_esc_r {
@@ -166,12 +166,12 @@
         };
 
         c_capsword_r {
-            bindings = <&caps_word>;
+            bindings = <&kp RSHIFT>;
             key-positions = <19 18>;
         };
 
         c_capsword_l {
-            bindings = <&caps_word>;
+            bindings = <&kp LSHIFT>;
             key-positions = <10 11>;
         };
 
