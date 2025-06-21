@@ -184,6 +184,16 @@
             bindings = <&kp GRAVE>;
             key-positions = <20 21>;
         };
+
+        c_comma {
+            bindings = <&kp COMMA>;
+            key-positions = <26 32>;
+        };
+
+        c_period {
+            bindings = <&kp PERIOD>;
+            key-positions = <27 32>;
+        };
     };
 
     keymap {
