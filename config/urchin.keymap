@@ -87,6 +87,25 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        m_bsDel_r: m_bsDel_r {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BSDEL_R";
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        ht_betaTest: ht_betaTest {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_BETATEST";
+            bindings = <&morph_symNav>, <&m_bsDel_r>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <75>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -203,10 +222,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J                    &kp L          &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M                    &kp N          &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K                    &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &morph_numFunc  &modsLeft LGUI SPACE  &modsRight RSHIFT SPACE  &morph_symNav
+&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J             &kp L          &kp U  &kp Y              &kp RA(W)
+&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M             &kp N          &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
+&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K             &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
+                                             &morph_numFunc  &modsLeft LGUI SPACE  &ht_betaTest 0 0  &morph_symNav
             >;
         };
 
