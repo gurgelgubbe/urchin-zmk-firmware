@@ -137,81 +137,97 @@
         c_enter_r {
             bindings = <&kp ENTER>;
             key-positions = <27 26>;
+            timeout-ms = <50>;
         };
 
         c_enter_l {
             bindings = <&kp ENTER>;
             key-positions = <23 22>;
+            timeout-ms = <50>;
         };
 
         c_backspace_r {
             bindings = <&kp BACKSPACE>;
             key-positions = <7 6>;
+            timeout-ms = <50>;
         };
 
         c_backspace_l {
             bindings = <&kp BACKSPACE>;
             key-positions = <2 3>;
+            timeout-ms = <50>;
         };
 
         c_delete_r {
             bindings = <&kp DELETE>;
             key-positions = <7 8>;
+            timeout-ms = <50>;
         };
 
         c_delete_l {
             bindings = <&kp DELETE>;
             key-positions = <2 1>;
+            timeout-ms = <50>;
         };
 
         c_esc_r {
             bindings = <&kp ESC>;
             key-positions = <9 8>;
+            timeout-ms = <50>;
         };
 
         c_esc_l {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
+            timeout-ms = <50>;
         };
 
         c_tab_r {
             bindings = <&kp TAB>;
             key-positions = <5 6>;
+            timeout-ms = <50>;
         };
 
         c_tab_l {
             bindings = <&kp TAB>;
             key-positions = <3 4>;
+            timeout-ms = <50>;
         };
 
         c_capsword_r {
             bindings = <&caps_word>;
             key-positions = <19 18>;
+            timeout-ms = <50>;
         };
 
         c_capsword_l {
             bindings = <&caps_word>;
             key-positions = <10 11>;
+            timeout-ms = <50>;
         };
 
         c_tilde_r {
             bindings = <&kp GRAVE>;
             key-positions = <29 28>;
+            timeout-ms = <50>;
         };
 
         c_tilde_l {
             bindings = <&kp GRAVE>;
             key-positions = <20 21>;
+            timeout-ms = <50>;
         };
 
         c_comma {
             bindings = <&kp COMMA>;
             key-positions = <26 32>;
+            timeout-ms = <50>;
         };
 
         c_period {
             bindings = <&kp PERIOD>;
             key-positions = <27 32>;
+            timeout-ms = <50>;
         };
     };
 
