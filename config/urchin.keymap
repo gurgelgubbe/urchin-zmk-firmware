@@ -26,6 +26,8 @@
     ignore-modifiers;
 };
 
+&mt { flavor = "tap-preferred"; };
+
 / {
     behaviors {
         // Enables holding the first mod-tap key
@@ -252,10 +254,10 @@
 
         numFunc {
             bindings = <
-&trans  &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &mt RPAR N0  &trans  &trans  &trans  &trans  &trans
-&trans  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans       &trans  &trans  &trans  &trans  &trans
-&trans  &mt EXCL N1  &mt AT N2     &mt HASH N3   &trans       &trans  &trans  &trans  &trans  &trans
-                                   &trans        &trans       &trans  &trans
+&trans  &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &mt EXCL N1  &mt AT N2     &mt HASH N3   &mt RIGHT_PARENTHESIS N0  &trans  &trans  &trans  &trans  &trans
+                                   &trans        &trans                    &trans  &trans
             >;
         };
 
@@ -264,7 +266,7 @@
 &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans   &trans  &trans
+                        &trans  &to 0    &trans  &trans
             >;
         };
 
@@ -282,7 +284,7 @@
 &trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT  &mt RBRC RBKT  &kp LPAR        &kp RPAR
 &trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &kp HOME       &kp PG_DN      &kp PG_UP       &kp END
 &trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA   &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
-                        &trans  &trans  &trans           &trans
+                        &trans  &trans  &to 0            &trans
             >;
         };
 
