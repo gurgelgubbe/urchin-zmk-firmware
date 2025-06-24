@@ -70,41 +70,31 @@
             require-prior-idle-ms = <150>;
         };
 
-        morph_numFunc: morph_numFunc {
+        m_numFunc: m_numFunc {
             compatible = "zmk,behavior-mod-morph";
-            label = "MORPH_NUMFUNC";
+            label = "M_NUMFUNC";
             bindings = <&mo 1>, <&mo 2>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        morph_symNav: morph_symNav {
+        m_symNav: m_symNav {
             compatible = "zmk,behavior-mod-morph";
-            label = "MORPH_SYMNAV";
+            label = "M_SYMNAV";
             bindings = <&mo 3>, <&mo 4>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        m_bsDel_r: m_bsDel_r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "M_BSDEL_R";
-            bindings = <&kp BACKSPACE>, <&kp DEL>;
-
+        td_mSymNav_mNumFunc: td_mSymNav_mNumFunc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MSYMNAV_MNUMFUNC";
             #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
+            bindings = <&m_symNav>, <&m_numFunc>;
 
-        ht_betaTest: ht_betaTest {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_BETATEST";
-            bindings = <&morph_symNav>, <&m_bsDel_r>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <75>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
         };
     };
 
@@ -229,6 +219,12 @@
             key-positions = <27 32>;
             timeout-ms = <50>;
         };
+
+        c_compose {
+            bindings = <&kp K_MENU>;
+            key-positions = <9 32>;
+            timeout-ms = <300>;
+        };
     };
 
     keymap {
@@ -238,10 +234,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J             &kp L          &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M             &kp N          &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K             &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &morph_numFunc  &modsLeft LGUI SPACE  &ht_betaTest 0 0  &morph_symNav
+&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J                 &kp L           &kp U  &kp Y              &kp RA(W)
+&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M                 &kp N           &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
+&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K                 &kp H           &kp O  &modsRight RALT I  &modsRight RCTRL SQT
+                                             &mt LGUI SPACE  &td_mSymNav_mNumFunc  &td_mSymNav_mNumFunc  &mt RGUI SPACE
             >;
         };
 
