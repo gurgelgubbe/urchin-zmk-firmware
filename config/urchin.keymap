@@ -88,13 +88,22 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        td_mSymNav_mNumFunc: td_mSymNav_mNumFunc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MSYMNAV_MNUMFUNC";
-            #binding-cells = <0>;
-            bindings = <&m_symNav>, <&m_numFunc>;
+        m_tog_numFunc: m_tog_numFunc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_TOG_NUMFUNC";
+            bindings = <&tog 1>, <&tog 2>;
 
-            tapping-term-ms = <200>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        m_tog_symNav: m_tog_symNav {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_TOG_SYMNAV";
+            bindings = <&tog 3>, <&tog 4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -221,7 +230,7 @@
         };
 
         c_compose {
-            bindings = <&kp K_MENU>;
+            bindings = <&kp C_MENU>;
             key-positions = <9 32>;
             timeout-ms = <300>;
         };
@@ -234,10 +243,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J                 &kp L           &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M                 &kp N           &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K                 &kp H           &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &mt LGUI SPACE  &td_mSymNav_mNumFunc  &td_mSymNav_mNumFunc  &mt RGUI SPACE
+&kp Q               &kp W             &kp F  &kp P           &kp B           &kp J          &kp L           &kp U  &kp Y              &kp RA(W)
+&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G           &kp M          &kp N           &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
+&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V           &kp K          &kp H           &kp O  &modsRight RALT I  &modsRight RCTRL SQT
+                                             &mt LGUI SPACE  &m_tog_numFunc  &m_tog_symNav  &mt RGUI SPACE
             >;
         };
 
