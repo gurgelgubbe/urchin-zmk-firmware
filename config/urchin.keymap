@@ -245,10 +245,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B           &kp J          &kp L           &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G           &kp M          &kp N           &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V           &kp K          &kp H           &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &mt LGUI SPACE  &m_tog_numFunc  &m_tog_symNav  &mt RGUI SPACE
+&kp Q               &kp W             &kp F  &kp P           &kp B           &kp J           &kp L          &kp U  &kp Y              &kp RA(W)
+&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G           &kp M           &kp N          &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
+&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V           &kp K           &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
+                                             &m_tog_numFunc  &mt LGUI SPACE  &mt RGUI SPACE  &m_tog_symNav
             >;
         };
 
@@ -266,7 +266,7 @@
 &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &trans  &trans  &trans
-                        &trans  &to 0    &trans  &trans
+                        &tog 2  &trans   &trans  &tog 4
             >;
         };
 
