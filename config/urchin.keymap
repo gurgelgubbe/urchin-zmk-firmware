@@ -107,6 +107,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        m_left: m_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_LEFT";
+            bindings = <&kp LEFT>, <&kp HOME>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+        };
+
+        m_down: m_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_DOWN";
+            bindings = <&kp DOWN>, <&kp PG_DN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+        };
+
+        m_up: m_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_UP";
+            bindings = <&kp UP>, <&kp PG_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+        };
+
+        m_right: m_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_RIGHT";
+            bindings = <&kp RIGHT>, <&kp END>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+        };
     };
 
     macros {
@@ -273,7 +309,7 @@
         symNav {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT  &mt RBRC RBKT  &kp LPAR        &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &kp LEFT       &kp DOWN       &kp UP          &kp RIGHT
+&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &m_left        &m_down        &m_up           &m_right
 &trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA   &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
                         &trans  &trans  &trans           &trans
             >;
