@@ -44,9 +44,9 @@
             bindings = <&kp>, <&kp>;
         };
 
-        modsRight: modsRight {
+        ht_modsRight: ht_modsRight {
             compatible = "zmk,behavior-hold-tap";
-            label = "MODSRIGHT";
+            label = "HT_MODSRIGHT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -58,9 +58,9 @@
             require-prior-idle-ms = <150>;
         };
 
-        modsLeft: modsLeft {
+        ht_modsLeft: ht_modsLeft {
             compatible = "zmk,behavior-hold-tap";
-            label = "MODSLEFT";
+            label = "HT_MODSLEFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -72,76 +72,58 @@
             require-prior-idle-ms = <150>;
         };
 
-        m_numFunc: m_numFunc {
+        mm_numFunc: mm_numFunc {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_NUMFUNC";
-            bindings = <&mo 1>, <&mo 2>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        m_symNav: m_symNav {
-            compatible = "zmk,behavior-mod-morph";
-            label = "M_SYMNAV";
-            bindings = <&mo 3>, <&mo 4>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        m_tog_numFunc: m_tog_numFunc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "M_TOG_NUMFUNC";
+            label = "MM_NUMFUNC";
             bindings = <&tog 1>, <&tog 2>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        m_tog_symNav: m_tog_symNav {
+        mm_left: mm_left {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_TOG_SYMNAV";
-            bindings = <&tog 3>, <&tog 4>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        m_left: m_left {
-            compatible = "zmk,behavior-mod-morph";
-            label = "M_LEFT";
+            label = "MM_LEFT";
             bindings = <&kp LEFT>, <&kp HOME>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
 
-        m_down: m_down {
+        mm_down: mm_down {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_DOWN";
+            label = "MM_DOWN";
             bindings = <&kp DOWN>, <&kp PG_DN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
 
-        m_up: m_up {
+        mm_up: mm_up {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_UP";
+            label = "MM_UP";
             bindings = <&kp UP>, <&kp PG_UP>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
 
-        m_right: m_right {
+        mm_right: mm_right {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_RIGHT";
+            label = "MM_RIGHT";
             bindings = <&kp RIGHT>, <&kp END>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+        };
+
+        ht_kp_tog: ht_kp_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_KP_TOG";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&tog>;
+
+            tapping-term-ms = <100>;
         };
     };
 
@@ -281,10 +263,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B           &kp J           &kp L          &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G           &kp M           &kp N          &kp E  &kp RA(O)          &modsRight RSHIFT RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V           &kp K           &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &m_tog_numFunc  &mt LGUI SPACE  &mt RGUI SPACE  &m_tog_symNav
+&kp Q                  &kp W                &kp F  &kp P        &kp B           &kp J           &kp L   &kp U  &kp Y                 &kp RA(W)
+&ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T        &kp G           &kp M           &kp N   &kp E  &kp RA(O)             &ht_modsRight RSHIFT RA(A)
+&ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D        &kp V           &kp K           &kp H   &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL SQT
+                                                   &mm_numFunc  &mt LGUI SPACE  &mt RGUI SPACE  &tog 3
             >;
         };
 
@@ -308,10 +290,10 @@
 
         symNav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT  &mt RBRC RBKT  &kp LPAR        &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &m_left        &m_down        &m_up           &m_right
-&trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA   &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
-                        &trans  &trans  &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT               &mt RBRC RBKT  &kp LPAR        &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &mm_left                    &mm_down       &mm_up          &mm_right
+&trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA                &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
+                        &trans  &trans  &trans           &ht_kp_tog LA(LC(LSHFT)) 3
             >;
         };
 
