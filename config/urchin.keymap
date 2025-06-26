@@ -72,22 +72,13 @@
             require-prior-idle-ms = <150>;
         };
 
-        mm_numFunc: mm_numFunc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_NUMFUNC";
-            bindings = <&tog 1>, <&tog 2>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         mm_left: mm_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_LEFT";
             bindings = <&kp LEFT>, <&kp HOME>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+            mods = <(MOD_RALT)>;
         };
 
         mm_down: mm_down {
@@ -96,7 +87,7 @@
             bindings = <&kp DOWN>, <&kp PG_DN>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+            mods = <(MOD_RALT)>;
         };
 
         mm_up: mm_up {
@@ -105,7 +96,7 @@
             bindings = <&kp UP>, <&kp PG_UP>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+            mods = <(MOD_RALT)>;
         };
 
         mm_right: mm_right {
@@ -114,7 +105,7 @@
             bindings = <&kp RIGHT>, <&kp END>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+            mods = <(MOD_RALT)>;
         };
 
         ht_kp_tog: ht_kp_tog {
@@ -124,6 +115,16 @@
             bindings = <&kp>, <&tog>;
 
             tapping-term-ms = <100>;
+        };
+
+        ht_mo_tog: ht_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_TOG";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
         };
     };
 
@@ -168,49 +169,49 @@
         c_backspace_r {
             bindings = <&kp BACKSPACE>;
             key-positions = <7 6>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_backspace_l {
             bindings = <&kp BACKSPACE>;
             key-positions = <2 3>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_delete_r {
             bindings = <&kp DELETE>;
             key-positions = <7 8>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_delete_l {
             bindings = <&kp DELETE>;
             key-positions = <2 1>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_esc_r {
             bindings = <&kp ESC>;
             key-positions = <9 8>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_esc_l {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_tab_r {
             bindings = <&kp TAB>;
             key-positions = <5 6>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_tab_l {
             bindings = <&kp TAB>;
             key-positions = <3 4>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_capsword_r {
@@ -228,25 +229,25 @@
         c_tilde_r {
             bindings = <&kp GRAVE>;
             key-positions = <29 28>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_tilde_l {
             bindings = <&kp GRAVE>;
             key-positions = <20 21>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
         };
 
         c_comma {
             bindings = <&kp COMMA>;
             key-positions = <26 32>;
-            timeout-ms = <50>;
+            timeout-ms = <75>;
         };
 
         c_period {
             bindings = <&kp PERIOD>;
             key-positions = <27 32>;
-            timeout-ms = <50>;
+            timeout-ms = <75>;
         };
 
         c_compose {
@@ -263,10 +264,10 @@
 
         base {
             bindings = <
-&kp Q                  &kp W                &kp F  &kp P        &kp B           &kp J           &kp L   &kp U  &kp Y                 &kp RA(W)
-&ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T        &kp G           &kp M           &kp N   &kp E  &kp RA(O)             &ht_modsRight RSHIFT RA(A)
-&ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D        &kp V           &kp K           &kp H   &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL SQT
-                                                   &mm_numFunc  &mt LGUI SPACE  &mt RGUI SPACE  &tog 3
+&kp Q                  &kp W                &kp F  &kp P           &kp B           &kp J           &kp L           &kp U  &kp Y                 &kp RA(W)
+&ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T           &kp G           &kp M           &kp N           &kp E  &kp RA(O)             &ht_modsRight RSHIFT RA(A)
+&ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D           &kp V           &kp K           &kp H           &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL SQT
+                                                   &ht_mo_tog 1 1  &mt LGUI SPACE  &mt RGUI SPACE  &ht_mo_tog 3 3
             >;
         };
 
@@ -284,16 +285,16 @@
 &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &trans  &trans  &trans
-                        &tog 2  &trans   &trans  &tog 4
+                        &trans  &trans   &trans  &trans
             >;
         };
 
         symNav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT               &mt RBRC RBKT  &kp LPAR        &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &mm_left                    &mm_down       &mm_up          &mm_right
-&trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA                &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
-                        &trans  &trans  &trans           &ht_kp_tog LA(LC(LSHFT)) 3
+&trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT      &mt RBRC RBKT  &kp LPAR        &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &mm_left           &mm_down       &mm_up          &mm_right
+&trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA       &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
+                        &trans  &trans  &trans           &ht_kp_tog RALT 3
             >;
         };
 
