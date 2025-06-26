@@ -114,7 +114,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&tog>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <250>;
         };
 
         ht_mo_tog: ht_mo_tog {
@@ -273,10 +273,10 @@
 
         numFunc {
             bindings = <
-&trans  &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &mt EXCL N1  &mt AT N2     &mt HASH N3   &mt RIGHT_PARENTHESIS N0  &trans  &trans  &trans  &trans  &trans
-                                   &trans        &trans                    &trans  &trans
+&kp C_VOL_UP       &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &kp C_BRI_INC             &trans  &trans  &trans  &trans  &trans
+&kp C_VOLUME_DOWN  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &kp C_BRI_DEC             &trans  &trans  &trans  &trans  &trans
+&kp C_MUTE         &mt EXCL N1  &mt AT N2     &mt HASH N3   &mt RIGHT_PARENTHESIS N0  &trans  &trans  &trans  &trans  &trans
+                                              &trans        &trans                    &trans  &trans
             >;
         };
 
