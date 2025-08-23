@@ -307,28 +307,28 @@
 
         numFunc_a {
             bindings = <
-&kp C_VOL_UP       &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &kp C_BRI_INC             &trans  &trans  &trans  &trans  &trans
-&kp C_VOLUME_DOWN  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &kp C_BRI_DEC             &trans  &trans  &trans  &trans  &trans
-&kp C_MUTE         &mt EXCL N1  &mt AT N2     &mt HASH N3   &mt RIGHT_PARENTHESIS N0  &trans  &trans  &trans  &trans  &trans
-                                              &trans        &trans                    &trans  &trans
+&kp N1  &kp N2  &kp N3      &kp N4        &kp N5        &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+&trans  &trans  &trans      &kp C_VOL_UP  &kp C_BRI_UP  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_BRI_DN  &trans  &trans  &trans  &trans  &trans
+                            &trans        &trans        &trans  &trans
             >;
         };
 
         numFunc_b {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans   &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans   &trans  &trans  &trans  &trans
+                        &trans  &trans   &trans   &trans
             >;
         };
 
         symNav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT      &mt RBRC RBKT  &kp LPAR        &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &mm_left           &mm_down       &mm_up          &mm_right
-&trans  &trans  &trans  &trans  &trans  &mt PLUS EQUAL   &mt LT COMMA       &mt GT DOT     &mt QMARK FSLH  &mt PIPE BSLH
-                        &trans  &trans  &trans           &ht_kp_tog RALT 3
+&trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp LBKT           &kp RBKT    &kp LPAR  &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &kp SEMI   &mm_left           &mm_down    &mm_up    &mm_right
+&trans  &trans  &trans  &trans  &trans  &kp EQUAL  &kp COMMA          &kp PERIOD  &kp FSLH  &kp BSLH
+                        &trans  &trans  &trans     &ht_kp_tog RALT 3
             >;
         };
 
