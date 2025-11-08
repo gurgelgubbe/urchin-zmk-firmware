@@ -167,6 +167,69 @@
 
             tapping-term-ms = <150>;
         };
+
+        td_leftBracket: td_leftBracket {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LEFTBRACKET";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N8)>, <&kp RA(N7)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_rightBracket: td_rightBracket {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RIGHTBRACKET";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N9)>, <&kp RA(N0)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_minusUnderscore: td_minusUnderscore {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MINUSUNDERSCORE";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp LS(SLASH)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_equalPlus: td_equalPlus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EQUALPLUS";
+            #binding-cells = <0>;
+            bindings = <&kp RS(N0)>, <&kp MINUS>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_commaLess: td_commaLess {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COMMALESS";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp LT>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_periodMore: td_periodMore {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PERIODMORE";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp GT>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_backslashPipe: td_backslashPipe {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BACKSLASHPIPE";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp RS(SQT)>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     macros {
@@ -352,10 +415,10 @@
 
         symNav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp RS(SLASH)  &qt RA(N8) RA(N7)  &kp RBKT    &kp LPAR           &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &td_semiColon  &mm_left           &mm_down    &mm_up             &mm_right
-&trans  &trans  &trans  &trans  &trans  &kp EQUAL      &kp COMMA          &kp PERIOD  &td_slashQuestion  &kp BSLH
-                        &trans  &trans  &trans         &ht_kp_tog RALT 3
+&trans  &trans  &trans  &trans  &trans  &td_minusUnderscore  &td_leftBracket    &td_rightBracket  &kp LPAR           &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &td_semiColon        &mm_left           &mm_down          &mm_up             &mm_right
+&trans  &trans  &trans  &trans  &trans  &td_equalPlus        &td_commaLess      &td_periodMore    &td_slashQuestion  &td_backslashPipe
+                        &trans  &trans  &trans               &ht_kp_tog RALT 3
             >;
         };
 
