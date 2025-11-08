@@ -140,6 +140,33 @@
             hold-trigger-on-release;
             require-prior-idle-ms = <150>;
         };
+
+        mm_fakeAnsi: mm_fakeAnsi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_FAKEANSI";
+            bindings = <&kp RA(N8)>, <&kp RA(N7)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        td_semiColon: td_semiColon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SEMICOLON";
+            #binding-cells = <0>;
+            bindings = <&kp LS(COMMA)>, <&kp LS(PERIOD)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        td_slashQuestion: td_slashQuestion {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASHQUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp LS(MINUS)>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     macros {
@@ -298,8 +325,8 @@
 
         base {
             bindings = <
-&kp Q                  &kp W                &kp F  &kp P  &kp B                &kp J                &kp L  &kp U  &kp Y                 &kp RA(W)
-&ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T  &kp G                &kp M                &kp N  &kp E  &kp RA(O)             &ht_modsRight RSHIFT RA(A)
+&kp Q                  &kp W                &kp F  &kp P  &kp B                &kp J                &kp L  &kp U  &kp Y                 &kp LBKT
+&ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T  &kp G                &kp M                &kp N  &kp E  &kp SEMI              &ht_modsRight RSHIFT SQT
 &ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D  &kp V                &kp K                &kp H  &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL SQT
                                                    &mo 1  &ht_mods LGUI SPACE  &ht_mods RGUI SPACE  &mo 3
             >;
@@ -325,10 +352,10 @@
 
         symNav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp LBKT           &kp RBKT    &kp LPAR  &kp RPAR
-&trans  &trans  &trans  &trans  &trans  &kp SEMI   &mm_left           &mm_down    &mm_up    &mm_right
-&trans  &trans  &trans  &trans  &trans  &kp EQUAL  &kp COMMA          &kp PERIOD  &kp FSLH  &kp BSLH
-                        &trans  &trans  &trans     &ht_kp_tog RALT 3
+&trans  &trans  &trans  &trans  &trans  &kp RS(SLASH)  &qt RA(N8) RA(N7)  &kp RBKT    &kp LPAR           &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &td_semiColon  &mm_left           &mm_down    &mm_up             &mm_right
+&trans  &trans  &trans  &trans  &trans  &kp EQUAL      &kp COMMA          &kp PERIOD  &td_slashQuestion  &kp BSLH
+                        &trans  &trans  &trans         &ht_kp_tog RALT 3
             >;
         };
 
