@@ -147,7 +147,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(COMMA)>, <&kp LS(PERIOD)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_slashQuestion: td_slashQuestion {
@@ -156,7 +156,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp LS(MINUS)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_leftBracket: td_leftBracket {
@@ -165,7 +165,7 @@
             #binding-cells = <0>;
             bindings = <&kp RA(N8)>, <&kp RA(N7)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_rightBracket: td_rightBracket {
@@ -174,7 +174,7 @@
             #binding-cells = <0>;
             bindings = <&kp RA(N9)>, <&kp RA(N0)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_minusUnderscore: td_minusUnderscore {
@@ -183,7 +183,7 @@
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp LS(SLASH)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_equalPlus: td_equalPlus {
@@ -192,7 +192,7 @@
             #binding-cells = <0>;
             bindings = <&kp RS(N0)>, <&kp MINUS>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_commaLess: td_commaLess {
@@ -201,7 +201,7 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp NON_US_BSLH>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_periodMore: td_periodMore {
@@ -210,24 +210,16 @@
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp RS(NON_US_BSLH)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
         };
 
         td_backslashPipe: td_backslashPipe {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BACKSLASHPIPE";
             #binding-cells = <0>;
-            bindings = <&kp RA(MINUS)>, <&kp RS(LESS_THAN)>;
+            bindings = <&kp RA(MINUS)>, <&kp RS(NON_US_BSLH)>;
 
-            tapping-term-ms = <230>;
-        };
-
-        td_quotes: td_quotes {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_QUOTES";
-            #binding-cells = <0>;
-            tapping-term-ms = <230>;
-            bindings = <&kp BACKSLASH>, <&kp RS(BACKSLASH)>;
+            tapping-term-ms = <250>;
         };
     };
 
