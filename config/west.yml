@@ -12,6 +12,9 @@ manifest:
       # nice-view-gem
     - name: m165437
       url-base: https://github.com/M165437
+      # zmk-locales
+    - name: zmk-locales
+      url-base: https://github.com/joelspadin
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,6 +25,9 @@ manifest:
       revision: main
     - name: nice-view-gem
       remote: m165437
+      revision: main
+    - name: zmk-locales
+      remote: zmk-locales
       revision: main
   self:
     path: config
