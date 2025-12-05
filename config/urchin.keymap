@@ -382,7 +382,7 @@
             bindings = <
 &kp Q                  &kp W                &kp F  &kp P  &kp B                &kp J                &kp L  &kp U  &kp Y                 &kp SE_A_RING
 &ht_modsLeft LSHIFT A  &kp R                &kp S  &kp T  &kp G                &kp M                &kp N  &kp E  &kp SE_O_UMLAUT       &ht_modsRight RSHIFT SE_A_UMLAUT
-&ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D  &kp V                &kp K                &kp H  &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL APOS
+&ht_modsLeft LCTRL Z   &ht_modsLeft LALT X  &kp C  &kp D  &kp V                &kp K                &kp H  &kp O  &ht_modsRight RALT I  &ht_modsRight RCTRL SE_APOSTROPHE
                                                    &mo 1  &ht_mods LGUI SPACE  &ht_mods RGUI SPACE  &mo 3
             >;
         };
